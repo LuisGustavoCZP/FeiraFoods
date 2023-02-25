@@ -1,0 +1,11 @@
+{
+  "name": "feirafoods",
+  "version": "1.0.0",
+  "description": "Aplicação para gestão de bancas de comida em feiras livres",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
