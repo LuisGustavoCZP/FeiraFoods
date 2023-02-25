@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Pacifico&display=swap');
+
+:root {
+    --font1: 'Fredoka One', cursive;
+    --font2: 'Pacifico', cursive;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    font-size: 22px;
+    /* 
+    flex-grow: 1; 
+    */
+    font-family: var(--font1);
+    user-select:none;
+    pointer-events:none;
+}
+
+header > h1 {
+    margin: 0;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*
+    flex-grow: 1; 
+    width: 100%;
+    height: 100%; 
+    */
+}
+
+form {
+    display: flex; 
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    width:fit-content;
+    padding: 10px;
+    gap: 5px;
+    background-color: var(--color6);
+}
+
+form > span {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    gap: 5px;
+    box-sizing: border-box;
+    padding: 4px;
+}
+
+form > span > label {
+    display: flex;
+    flex-grow: 1;
+    justify-content: end;
+    font-family: var(--font1);
+    box-sizing: border-box;
+    user-select:none;
+    pointer-events:none;
+}
+
+form > button {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    padding: 5px;
+    margin: 0;
+    margin-top: 5px;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font1);
+    user-select:none;
+    background-color: var(--color3);
+    border-color: var(--color0);
+    color: var(--color0);
+}
+
+form > button:disabled {
+    background-color: var(--color0);
+    border-color: var(--color3);
+    color: var(--color3);
+}

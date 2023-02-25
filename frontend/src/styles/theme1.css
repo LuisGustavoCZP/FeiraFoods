@@ -1,0 +1,17 @@
+:root {
+    --color0: red;
+    --color1: hsla(0, 100%, 50%, 0.5);
+    --color2: hsla(0, 100%, 50%, 0.25);
+    --color3: hsla(50, 100%, 50%, 1);
+    --color4: hsla(50, 100%, 50%, 0.5);
+    --color5: hsla(50, 100%, 50%, 0.25);
+    --color6: hsla(35, 100%, 80%, 0.99);
+}
+
+.App {
+    background-color: var(--color5);
+}
+
+header {
+    color: var(--color0);
+}
