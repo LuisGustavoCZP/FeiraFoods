@@ -1,0 +1,32 @@
+.Button {
+    display: flex;
+    --color-a: var(--color3);
+    --color-i: var(--color0);
+    --color-b1: var(--color2);
+    --color-b2: var(--color4);
+}
+
+.Button > button {
+    background-color: var(--color-a);
+    color: var(--color-i);
+    border-color: var(--color-b1);
+    font-family: var(--font1);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.Button.selected > button, .Button > button:hover {
+    background-color: var(--color-i);
+    color: var(--color-a);
+    border-color: var(--color-b2);
+}
+
+.Button > button > svg {
+    display: flex;
+    flex-grow: 1;
+    height: 100%;
+}

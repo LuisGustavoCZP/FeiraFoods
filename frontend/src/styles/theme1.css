@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Pacifico&display=swap');
+
 :root {
     --color0: red;
     --color1: hsla(0, 100%, 50%, 0.5);
@@ -6,12 +8,20 @@
     --color4: hsla(50, 100%, 50%, 0.5);
     --color5: hsla(50, 100%, 50%, 0.25);
     --color6: hsla(35, 100%, 80%, 0.99);
+
+    --white: hsla(90, 98%, 98%, 1);
+    --black: black;
+
+    --shadow0: var(--black);
+
+    --font1: 'Fredoka One', cursive;
+    --font2: 'Pacifico', cursive;
 }
 
-.App {
+body {
     background-color: var(--color5);
 }
 
-header {
-    color: var(--color0);
+main {
+
 }

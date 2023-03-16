@@ -1,0 +1,12 @@
+.Modal {
+    position: fixed;
+    display: flex;
+    flex-grow: 1;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    z-index: 10000;
+    background-color: hsla(0, 0%, 0%, 0.4);
+    top: 0;
+    left: 0;
+}

@@ -1,42 +1,42 @@
-import { FormEvent, CSSProperties, useState } from "react";
+import { FormEvent, useContext, useState } from "react";
+import { UserContext } from "../contexts/UserContext";
 import "../styles/login.css";
-import logo from "../images/logo-pastel-da-feira.webp";
 import { Input } from "./input";
+import { Logo } from "./logo";
 
 export function Login ()
 {
-    const [accept_inputs] = useState();
+    const { login } = useContext(UserContext);
+    const [ error, setError ] = useState("");
 
-    function onInput (index : number, event : FormEvent)
-    {
-        var inputElement = event.target as HTMLInputElement;
-        console.log(1 << index);
-    }
-
-    function onSubmit (event : FormEvent)
+    async function onSubmit (event : FormEvent)
     {
         event.stopPropagation();
         event.preventDefault();
 
-        var formData = new FormData(event.target as HTMLFormElement);
-        var data = Object.fromEntries(formData.entries());
+        const formData = new FormData(event.target as HTMLFormElement);
+        const data = Object.fromEntries(formData.entries());
 
-        console.log(data);
+        const { email, password } = data;
+
+        const error = await login(email as string, password as string);
+        if(error != undefined) setError(error);
+        else setError("Guardado!");
     }
 
     return (
-        <>
-            <header>
-                <img src={logo} />
-                <h1>Pastel de Feira</h1>
-            </header>
-            <main>
+        <main className="login">
+            <div>
+                <Logo/>
                 <form onSubmit={onSubmit}>
-                    <Input name="username" title="Usuario" required={true} pattern="\w{6,}" tooltip="Letras e numeros (A-Z, 0-9), seis ou mais (6+)"/>
-                    <Input name="password" title="Senha" type="password" required={true} pattern="\w{6,}" tooltip="Letras e numeros (A-Z, 0-9), seis ou mais (6+)"/>
-                    <button disabled={false}>ENTRAR</button>
+                <Input name="email" title="Usuario" type="email" required={true} pattern="\w{1,}@\w{1,}(\.com\.\w{2}|\.com)" tooltip="Letras e numeros (A-Z, 0-9), seis ou mais (6+)"/>
+                <Input name="password" title="Senha" type="password" required={true} pattern=".{6,}" tooltip="Letras e numeros (A-Z, 0-9), seis ou mais (6+)"/>
+                <button disabled={false}>ENTRAR</button>
                 </form>
-            </main>
-        </>
+            </div>
+            <div>
+                {error}
+            </div>
+        </main>
     );
 }

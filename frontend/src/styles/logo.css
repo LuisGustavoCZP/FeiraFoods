@@ -1,0 +1,25 @@
+.Logo {
+    display: flex;
+    font-size: 18px;
+    position: relative;
+    width: 100%;
+    flex-grow: 1;
+    justify-content: center;
+
+    user-select:none;
+    pointer-events:none;
+}
+
+.Logo > img {
+    display: flex;
+}
+
+.Logo > h1 {
+    color: var(--color3);
+    --borderColor: black;
+    font-family: var(--font1);
+    margin: 0;
+    position: absolute;
+    top: 0;
+    text-shadow: -1px -1px 0 var(--borderColor), 1px -1px 0 var(--borderColor), -1px 1px 0 var(--borderColor), 1px 1px 0 var(--borderColor);
+}

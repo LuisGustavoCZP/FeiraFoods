@@ -1,0 +1,12 @@
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    box-sizing: border-box;
+    box-shadow: 0 1px 3px 2px rgb(117, 117, 117);
+
+    background-color: var(--color5);
+}

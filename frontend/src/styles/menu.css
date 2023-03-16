@@ -1,0 +1,31 @@
+.Menu {
+    display: flex;
+    background-color: var(--color5);
+    border-bottom: 1px solid black;
+    
+    /* border-left: 1px solid black;
+    border-right: 1px solid black; */
+
+}
+
+.Menu ul {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    list-style: none;
+    gap: 4px;
+    justify-content: center;
+
+    margin: 0;
+    padding: 4px 25px 2px 25px;
+}
+
+.Menu li {
+    display: flex;
+    height: 30px;
+    user-select: none;
+}
+
+.Menu li > button {
+    gap: 5px;
+}

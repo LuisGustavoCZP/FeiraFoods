@@ -1,0 +1,159 @@
+.FoodItem {
+    background-color: var(--color5);
+    display: flex;
+    position: relative;
+
+    /* width: fit-content; */
+    width: 360px;
+    height: 140px;
+
+    border-radius: 10px;
+    border-top-right-radius: 0;
+    overflow: hidden;
+
+    box-shadow: 1px 2px 3px black;
+}
+
+.FoodItem > div {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.FoodItem > div > span {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    max-height: 100%;
+}
+
+.FoodItem > div > span > h5 {
+    display: flex;
+    margin: 0;
+    padding: 5px 10px 5px 10px;
+    width: fit-content;
+    background-color: var(--color2);
+}
+
+.FoodItem > div > span > h5:nth-child(1) {
+    border-top-right-radius: 13px;
+}
+
+.FoodItem > div > span > h5:nth-child(2) {
+    border-top-left-radius: 13px;
+}
+
+.FoodItem > div > span {
+    display: flex;
+}
+
+.FoodItem > div > span:nth-child(1) {
+    display: flex;
+    height: fit-content;
+}
+
+.FoodItem > div > span > .Button {
+    display: flex;
+    height: 31px;
+    overflow: hidden;
+}
+
+.FoodItem > div > span > .Button > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.FoodItem > div p, .FoodItem h4 {
+    margin: 0 0 0 0;
+    padding: 0px 5px;
+}
+
+.FoodItem > div p {
+    display: flex;
+    flex-grow: 1;
+    overflow: auto;
+    text-overflow: ellipsis;
+    max-height: 100%;
+}
+
+.FoodItem > div p::-webkit-scrollbar {
+    background-color: var(--color2);
+    width: 20px;
+}
+
+.FoodItem > div p::-webkit-scrollbar-thumb {
+    background-color: var(--color2);
+}
+
+.FoodItem h4 {
+    display: flex;
+    flex-grow: 1;
+    background-color: var(--color1);
+    padding: 5px 10px;
+    color: var(--color3);
+    height: fit-content;
+}
+
+.FoodItem img {
+    background-color: var(--color1);
+
+    pointer-events: none;
+
+    object-fit: cover;
+
+    z-index: 1;
+    aspect-ratio: 1;
+
+    width: 120px;
+    height: 120px;
+
+    padding: 10px 10px 10px 10px;
+}
+
+.FoodItem .Empty {
+    margin: 20px;
+    background-color: var(--color1);
+    -webkit-mask: url(../images/create-icon.svg) no-repeat center;
+    mask: url(../images/create-icon.svg) no-repeat center;
+}
+
+.FoodItem .Empty:hover {
+    margin: 20px;
+    background-color: var(--color0);
+    -webkit-mask: url(../images/create-icon.svg) no-repeat center;
+    mask: url(../images/create-icon.svg) no-repeat center;
+}
+
+.FoodItem.Empty {
+    border-radius: 10px;
+}
+
+.FoodItem.Empty .Button {
+    display: flex;
+    flex-grow: 1;
+}
+
+.FoodItem.Empty .Button > button {
+    /* background-color: rgba(0,0,0,0); */
+    border-radius: 10px;
+}
+
+.FoodItem .Button > button
+{
+    background-color: var(--color5);
+    border-color: var(--color2);
+    color: var(--color1);
+}
+
+.FoodItem .Button > button:hover, .FoodItem .Button.selected > button
+{
+    background-color: var(--color4);
+    border-color: var(--color1);
+    color: var(--color0);
+}

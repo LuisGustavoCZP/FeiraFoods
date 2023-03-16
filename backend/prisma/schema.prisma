@@ -1,0 +1,66 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+	provider = "prisma-client-js"
+}
+
+datasource db {
+	provider = "sqlite" //"postgresql"
+	url      = env("DATABASE_URL")
+}
+
+model UserRole {
+	id    		Int    			@id @default(autoincrement())
+	name  		String
+	level 		Int
+	categories  UserCategory[]
+}
+
+model UserCategory {
+	id    		Int    			@id @default(autoincrement())
+	name  		String
+	roles   	UserRole[] 		@relation
+	users		User[]
+}
+
+model User {
+	id          String     		@id @default(uuid())
+	email       String     		@unique
+	name        String
+	password    String
+	category	UserCategory? 	@relation(fields: [categoryId], references: [id])
+	categoryId	Int?			@default(1)
+}
+
+model FoodCategory {
+	id    		Int    			@id @default(autoincrement())
+	name  		String
+	description	String
+	foods   	FoodItem[] 		@relation
+}
+
+model FoodItem {
+	id    		Int    			@id @default(autoincrement())
+	name  		String
+	price		Float
+	description	String
+	image		String
+	category	FoodCategory? 	@relation(fields: [categoryId], references: [id])
+	categoryId	Int?			@default(1)
+	storeds		FoodStorageItem[]
+}
+
+model FoodStorageItem {
+	id    		Int    			@id @default(autoincrement())
+	total		Int
+	foodItem	FoodItem?		@relation(fields: [foodItemId], references: [id])
+	foodItemId	Int?
+	storage		FoodStorage?	@relation(fields: [storageId], references: [id])
+	storageId	Int?
+}
+
+model FoodStorage {
+	id    		Int    			@id @default(autoincrement())
+	items		FoodStorageItem[]
+}

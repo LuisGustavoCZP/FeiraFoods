@@ -1,4 +1,8 @@
-import { PartialType } from '@nestjs/mapped-types';
-import { CreateUserDto } from './create-user.dto';
+import { PartialType } from "@nestjs/mapped-types";
+import { Prisma } from "@prisma/client";
+import { IsEmail, IsString, IsStrongPassword } from "class-validator";
+import { CreateUserDto } from "./create-user.dto";
 
-export class UpdateUserDto extends PartialType(CreateUserDto) {}
+export class UpdateUserDto extends PartialType(CreateUserDto) 
+{
+}

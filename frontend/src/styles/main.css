@@ -1,0 +1,29 @@
+main {
+    display: flex;
+
+    flex-direction: column;
+
+    flex-grow: 1; 
+    width: 100%;
+    height: 100%;
+}
+
+main > section {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+    margin: 10px;
+}
+
+main > section h2 {
+    display: flex;
+    justify-content: center;
+    font-family: var(--font2);
+    user-select: none;
+    margin: 5px 20px 10px 20px;
+    text-shadow: 1px 1px 1px var(--color3);
+    color: var(--color1);
+    /* text-transform: uppercase; */
+    letter-spacing: .2em;
+    font-size: 2.5rem;
+}

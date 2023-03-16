@@ -1,13 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Header } from './components/header';
+import { Main } from './components/main';
+import { UserContextProvider } from './contexts/UserContext';
 import './styles/theme1.css';
-import { Login } from './components/login';
 
-function App() {
+function App() 
+{
   return (
     <div className="App">
-      <Login/>
+      <UserContextProvider>
+        <Header />
+        <Main />
+      </UserContextProvider>
     </div>
   );
 }
